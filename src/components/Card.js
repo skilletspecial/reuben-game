@@ -12,7 +12,7 @@ const Card = () => {
   }
 
   return (
-    <div className="card-outer" onClick={() => {flip()}}>
+    <div className="card-outer" onClick={flip}>
       <div className={flipped === true ? "card-inner card-flipped" : "card-inner"}>
         <div className="card-front">
             front
