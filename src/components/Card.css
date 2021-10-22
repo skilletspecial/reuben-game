@@ -1,0 +1,40 @@
+.card-outer {
+    background: transparent;
+    height: 12rem;
+    perspective: 24rem;
+    width: 8rem;
+}
+
+.card-inner {
+    height: 100%;
+    position: relative;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    width: 100%;
+}
+
+.card-flipped {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    backface-visibility: hidden;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+}
+
+.card-front {
+    background-color: #bbb;
+    border-radius: .5rem;
+    color: black;
+}
+
+.card-back {
+    background-color: dodgerblue;
+    border-radius: .5rem;
+    color: white;
+    transform: rotateY(180deg);
+}
