@@ -3,38 +3,21 @@ import React, { useState, useEffect, useRef }from "react";
 import "./Table.css";
 import Card from "./Card";
 
-let first = null;
-let second = null;
-
 const Table = () => {
-    const [cards, setCards] = useState([1,2,3,4]);
+    const [cards, setCards] = useState([1,2,3,4,5,6]);
     const [firstSelected, setFirstSelected] = useState(null);
     const [secondSelected, setSecondSelected] = useState(null);
 
     
 
-    const selectCard = (index) => {
+    const handleCardClick = (index) => {
         console.log(index);
-
-
-        if (!first) {
-            first = index;
-        } else {
-            second = index;
-        }
-
-        // console.log("first: ", first);
-        // console.log("second: ", second);
-        setFirstSelected(first);
-        setSecondSelected(second);
     }
 
 
     return (
-        <div>
-            <div>first: {firstSelected}</div>
-            <div>second: {secondSelected}</div>
-            {cards.map((card, i) => (<span key={i} onClick={() => {selectCard(i)}}>
+        <div className="cards">
+            {cards.map((card, i) => (<span key={i} onClick={() => {handleCardClick(i)}}>
                 <Card></Card>
             </span>))}
         </div>
